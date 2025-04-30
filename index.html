@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Clippers vs Nuggets Game 6 Preview</title>
+    <style>
+        :root {
+            --clippers-blue: #1D428A;
+            --clippers-red: #C8102E;
+            --nuggets-blue: #0E2240;
+            --nuggets-gold: #FEC524;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--clippers-blue), var(--nuggets-blue));
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--nuggets-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            z-index: -1;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 1;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--clippers-red);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--nuggets-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Game Summary Section */
+        .game-summary {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--clippers-blue);
+        }
+
+        .summary-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .summary-text {
+            padding: 2rem;
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .summary-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .summary-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .summary-image:hover {
+            transform: scale(1.02);
+        }
+
+        .summary-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Team Stats Section */
+        .team-stats {
+            padding: 4rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            flex: 1;
+            padding: 2rem;
+            margin: 0 1rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .clippers {
+            border-top: 5px solid var(--clippers-blue);
+        }
+
+        .nuggets {
+            border-top: 5px solid var(--nuggets-gold);
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .chart-container {
+            margin-top: 3rem;
+            height: 300px;
+            width: 100%;
+            position: relative;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* News Section */
+        .news {
+            padding: 4rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--clippers-blue);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--nuggets-gold);
+        }
+
+        /* Countdown Section */
+        .countdown {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--nuggets-blue), var(--clippers-blue));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .countdown h2 {
+            margin-bottom: 2rem;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-value {
+            font-size: 3rem;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--nuggets-gold);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--clippers-red);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--clippers-red);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .summary-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .team-card {
+                margin: 0;
+            }
+
+            .countdown-timer {
+                gap: 1rem;
+            }
+
+            .countdown-value {
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--clippers-blue);
+                padding: 1rem 0;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: var(--transition);
+            }
+
+            nav.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .countdown-timer {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .countdown-value {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 50vh;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class=\"container header-container\">
+            <div class=\"logo\">NBA Playoffs</div>
+            <button class=\"mobile-menu-btn\" id=\"mobileMenuBtn\">☰</button>
+            <nav id=\"mainNav\">
+                <ul>
+                    <li><a href=\"#game-summary\">Game Summary</a></li>
+                    <li><a href=\"#team-stats\">Team Stats</a></li>
+                    <li><a href=\"#gallery\">Gallery</a></li>
+                    <li><a href=\"#news\">News</a></li>
+                    <li><a href=\"https://github.com/BillMatrix/clippers-nuggets-game6\" target=\"_blank\">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class=\"hero\">
+        <img src=\"https://www.rollingstone.com/wp-content/uploads/2025/04/Clippers-Nuggets-Getty-Header.jpg?w=1580&h=1054&crop=1\" alt=\"Clippers vs Nuggets\" class=\"hero-image\">
+        <div class=\"hero-content\">
+            <h1>Clippers vs Nuggets: Game 6</h1>
+            <p>The Los Angeles Clippers face elimination as they host the Denver Nuggets in a crucial Game 6 of their playoff series.</p>
+            <button class=\"cta-button\" id=\"watchLiveBtn\">Watch Live</button>
+        </div>
+    </section>
+
+    <!-- Game Summary Section -->
+    <section id=\"game-summary\" class=\"game-summary\">
+        <div class=\"container\">
+            <h2 class=\"section-title\">Game Summary</h2>
+            <div class=\"summary-content\">
+                <div class=\"summary-text\">
+                    <p>The Los Angeles Clippers are facing the Denver Nuggets in Game 6 on Thursday night at the Intuit Dome. Denver currently leads the series 3-2 after winning Game 5 with a score of 131-115.</p>
+                    <p>In Game 5, Jamal Murray led the Nuggets with an impressive 43 points, while Ivica Zubac led the Clippers with a playoff career-high of 27 points.</p>
+                    <p>To avoid elimination, the Clippers must win Game 6 at home. If they manage to secure a victory, the decisive Game 7 will take place on Saturday in Denver.</p>
+                    <p>The Clippers will need to find a way to contain Murray, who has been on fire throughout the series, while also getting more production from their star players.</p>
+                </div>
+                <div class=\"summary-image\">
+                    <img src=\"https://sportshub.cbsistatic.com/i/r/2025/04/29/23df9902-62b3-4128-90d1-9cf75fc114cc/thumbnail/1200x675/af2ca38e95aaf6d3f9fcf2136a0298d8/nuggets-clippers-getty.png\" alt=\"Nuggets vs Clippers action\">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Stats Section -->
+    <section id=\"team-stats\" class=\"team-stats\">
+        <div class=\"container\">
+            <h2 class=\"section-title\">Team Stats</h2>
+            <div class=\"stats-container\">
+                <div class=\"team-card clippers\">
+                    <h3>LA Clippers</h3>
+                    <div class=\"stat-item\">
+                        <span>Points Per Game</span>
+                        <span>112.5</span>
+                    </div>
+                    <div class=\"stat-item\">
+                        <span>Rebounds Per Game</span>
+                        <span>43.2</span>
+                    </div>
+                    <div class=\"stat-item\">
+                        <span>Assists Per Game</span>
+                        <span>24.8</span>
+                    </div>
+                    <div class=\"stat-item\">
+                        <span>Field Goal %</span>
+                        <span>47.3%</span>
+                    </div>
+                    <div class=\"stat-item\">
+                        <span>3-Point %</span>
+                        <span>38.2%</span>
+                    </div>
+                </div>
+                <div class=\"team-card nuggets\">
+                    <h3>Denver Nuggets</h3>
+                    <div class=\"stat-item\">
+                        <span>Points Per Game</span>
+                        <span>116.8</span>
+                    </div>
+                    <div class=\"stat-item\">
+                        <span>Rebounds Per Game</span>
+                        <span>44.5</span>
+                    </div>
+                    <div class=\"stat-item\">
+                        <span>Assists Per Game</span>
+                        <span>27.3</span>
+                    </div>
+                    <div class=\"stat-item\">
+                        <span>Field Goal %</span>
+                        <span>49.1%</span>
+                    </div>
+                    <div class=\"stat-item\">
+                        <span>3-Point %</span>
+                        <span>37.9%</span>
+                    </div>
+                </div>
+            </div>
+            <div class=\"chart-container\" id=\"pointsChart\"></div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section id=\"gallery\" class=\"gallery\">
+        <div class=\"container\">
+            <h2 class=\"section-title\">Gallery</h2>
+            <div class=\"gallery-container\">
+                <div class=\"gallery-item\">
+                    <img src=\"https://s.yimg.com/ny/api/res/1.2/W0Uemlprrmjz35XmM45d6g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU7Y2Y9d2VicA--/https://cf-images.us-east-1.prod.boltdns.net/v1/jit/6415665815001/6cdb2c55-bd2c-4812-b64f-51effb815203/main/1280x720/43s146ms/match/image.jpg\" alt=\"Game Highlights\">
+                    <div class=\"gallery-caption\">Clippers vs Nuggets Game Highlights</div>
+                </div>
+                <div class=\"gallery-item\">
+                    <img src=\"https://ktla.com/wp-content/uploads/sites/4/2025/04/GettyImages-2211862963.jpg?w=2560&h=1440&crop=1\" alt=\"Supporters section\">
+                    <div class=\"gallery-caption\">Supporters section at new Clippers arena</div>
+                </div>
+                <div class=\"gallery-item\">
+                    <img src=\"https://www.sportsbettingdime.com/app/uploads/2025/04/USATSI_26008593-1692x952.jpg\" alt=\"Game 6 Odds\">
+                    <div class=\"gallery-caption\">Nuggets vs Clippers Game 6 Odds</div>
+                </div>
+                <div class=\"gallery-item\">
+                    <img src=\"https://www.rollingstone.com/wp-content/uploads/2025/04/Clippers-Nuggets-Getty-Header.jpg?w=1580&h=1054&crop=1\" alt=\"How to Watch\">
+                    <div class=\"gallery-caption\">How to Watch L.A. Clippers vs. Denver Nuggets 2025 NBA Playoff Games</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id=\"news\" class=\"news\">
+        <div class=\"container\">
+            <h2 class=\"section-title\">Latest News</h2>
+            <div class=\"news-container\">
+                <div class=\"news-card\">
+                    <div class=\"news-image\">
+                        <img src=\"https://sportshub.cbsistatic.com/i/r/2025/04/29/23df9902-62b3-4128-90d1-9cf75fc114cc/thumbnail/1200x675/af2ca38e95aaf6d3f9fcf2136a0298d8/nuggets-clippers-getty.png\" alt=\"News 1\">
+                    </div>
+                    <div class=\"news-content\">
+                        <h3>Clippers Face Elimination in Game 6</h3>
+                        <p>The Los Angeles Clippers need a win at home to force a Game 7 in their series against the Denver Nuggets.</p>
+                        <a href=\"#\" class=\"read-more\">Read More</a>
+                    </div>
+                </div>
+                <div class=\"news-card\">
+                    <div class=\"news-image\">
+                        <img src=\"https://www.sportsbettingdime.com/app/uploads/2025/04/USATSI_26008593-1692x952.jpg\" alt=\"News 2\">
+                    </div>
+                    <div class=\"news-content\">
+                        <h3>Murray's 43 Points Lead Nuggets to Game 5 Victory</h3>
+                        <p>Jamal Murray's explosive performance helped the Nuggets take a 3-2 series lead over the Clippers.</p>
+                        <a href=\"#\" class=\"read-more\">Read More</a>
+                    </div>
+                </div>
+                <div class=\"news-card\">
+                    <div class=\"news-image\">
+                        <img src=\"https://ktla.com/wp-content/uploads/sites/4/2025/04/GettyImages-2211862963.jpg?w=2560&h=1440&crop=1\" alt=\"News 3\">
+                    </div>
+                    <div class=\"news-content\">
+                        <h3>Intuit Dome Ready for First Elimination Game</h3>
+                        <p>The Clippers' new arena will host its first elimination playoff game as the team fights to stay alive.</p>
+                        <a href=\"#\" class=\"read-more\">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class=\"countdown\">
+        <div class=\"container\">
+            <h2>Countdown to Game 6</h2>
+            <div class=\"countdown-timer\" id=\"countdown\">
+                <div class=\"countdown-item\">
+                    <div class=\"countdown-value\" id=\"days\">00</div>
+                    <div class=\"countdown-label\">Days</div>
+                </div>
+                <div class=\"countdown-item\">
+                    <div class=\"countdown-value\" id=\"hours\">00</div>
+                    <div class=\"countdown-label\">Hours</div>
+                </div>
+                <div class=\"countdown-item\">
+                    <div class=\"countdown-value\" id=\"minutes\">00</div>
+                    <div class=\"countdown-label\">Minutes</div>
+                </div>
+                <div class=\"countdown-item\">
+                    <div class=\"countdown-value\" id=\"seconds\">00</div>
+                    <div class=\"countdown-label\">Seconds</div>
+                </div>
+            </div>
+            <button class=\"cta-button\" id=\"reminderBtn\">Set Reminder</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class=\"container footer-container\">
+            <div class=\"footer-section\">
+                <h3>About</h3>
+                <ul>
+                    <li><a href=\"#\">About the Series</a></li>
+                    <li><a href=\"#\">Team Profiles</a></li>
+                    <li><a href=\"#\">Playoff Bracket</a></li>
+                    <li><a href=\"#\">NBA History</a></li>
+                </ul>
+            </div>
+            <div class=\"footer-section\">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href=\"#game-summary\">Game Summary</a></li>
+                    <li><a href=\"#team-stats\">Team Stats</a></li>
+                    <li><a href=\"#gallery\">Gallery</a></li>
+                    <li><a href=\"#news\">News</a></li>
+                </ul>
+            </div>
+            <div class=\"footer-section\">
+                <h3>Connect</h3>
+                <div class=\"social-links\">
+                    <a href=\"#\" aria-label=\"Facebook\">FB</a>
+                    <a href=\"#\" aria-label=\"Twitter\">TW</a>
+                    <a href=\"#\" aria-label=\"Instagram\">IG</a>
+                    <a href=\"#\" aria-label=\"YouTube\">YT</a>
+                </div>
+                <p style=\"margin-top: 1rem;\">
+                    <a href=\"https://github.com/BillMatrix/clippers-nuggets-game6\" target=\"_blank\" style=\"color: white; text-decoration: underline;\">GitHub Repository</a>
+                </p>
+            </div>
+        </div>
+        <div class=\"copyright\">
+            <p>&copy; 2025 NBA Playoffs Coverage. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class=\"modal\" id=\"watchModal\">
+        <div class=\"modal-content\">
+            <button class=\"close-modal\" id=\"closeModal\">&times;</button>
+            <h2>Watch Game 6 Live</h2>
+            <p>The game will be broadcast on:</p>
+            <ul style=\"margin: 1rem 0 1rem 1.5rem;\">
+                <li>TNT</li>
+                <li>NBA League Pass</li>
+                <li>Local sports networks</li>
+            </ul>
+            <p>Game starts at 7:30 PM PT / 10:30 PM ET</p>
+            <button class=\"cta-button\" style=\"margin-top: 1rem;\">Subscribe Now</button>
+        </div>
+    </div>
+
+    <div class=\"modal\" id=\"reminderModal\">
+        <div class=\"modal-content\">
+            <button class=\"close-modal\" id=\"closeReminderModal\">&times;</button>
+            <h2>Set a Reminder</h2>
+            <p>Enter your email to receive a reminder before the game starts:</p>
+            <form id=\"reminderForm\" style=\"margin-top: 1.5rem;\">
+                <input type=\"email\" placeholder=\"Your email\" required style=\"width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px;\">
+                <button type=\"submit\" class=\"cta-button\">Set Reminder</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('
